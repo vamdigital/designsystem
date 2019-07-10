@@ -29,7 +29,7 @@ module.exports = {
         use: ['babel-loader', 'eslint-loader']
       },
       {
-        test: /\.(png|svg|jpg|gif)$/,
+        test: /\.(png|svg|jpg|gif|ico)$/,
         use: ['file-loader']
       },
       {
@@ -41,17 +41,15 @@ module.exports = {
             options: {
               modules: true,
               sourceMap: true
-
             }
           },
           {
             loader: 'sass-loader',
             options: {
-               data: '@import "./app/scss/app.scss";',
-               sourceMap: true
+              data: '@import "./app/scss/app.scss";',
+              sourceMap: true
             }
           }
-          
         ]
       }
     ]
@@ -63,7 +61,7 @@ module.exports = {
   },
 
   devServer: {
-    historyApiFallback: true,
+    historyApiFallback: true
   },
 
   plugins: [
