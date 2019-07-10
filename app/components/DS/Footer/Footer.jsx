@@ -17,7 +17,10 @@ const Footer = props => {
       <div className="container">
         <div className="row">
           <div className="col-12">
-            <p className="small">&copy; Copyright {fullYear} Design System - A Happy Markup initiative</p>
+            <p className="small">
+              &copy; Copyright {fullYear} Design System - A VAM Digital
+              initiative
+            </p>
           </div>
         </div>
       </div>
