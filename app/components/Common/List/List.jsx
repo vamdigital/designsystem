@@ -5,9 +5,8 @@
 
 /* Import Statement Below */
 import React from 'react';
-import {NavLink} from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-
 
 /* Type Checking for PropTypes */
 const propTypes = {
@@ -20,36 +19,37 @@ const propTypes = {
 
 /* Declare default Props value for all non-required props */
 const defaultProps = {
-    // name: 'Vaibhav Shringarpure',
-    listArray: [],
-    listClassName: '',
-    listLinkClassName: ''
+  // name: 'Vaibhav Shringarpure',
+  listArray: [],
+  listClassName: '',
+  listLinkClassName: ''
 };
 
-const removeFocus = (e) => {
+const removeFocus = e => {
   e.currentTarget.blur();
-}
+};
 
-const List = (props) => {
+const List = props => {
   let listItem = null;
   if (props.listArray.length) {
     listItem = props.listArray.map((list, index) => {
-      console.log(list);
-    const keyVal = (list.id) ? list.id : index;
+      const keyVal = list.id ? list.id : index;
       return (
         <li key={keyVal} className={props.listClassName}>
-          <NavLink to={`/${list.url}`} activeClassName="active" onClick={removeFocus}>{list.key}</NavLink>
+          <NavLink
+            to={`/${list.url}`}
+            activeClassName="active"
+            onClick={removeFocus}
+          >
+            {list.key}
+          </NavLink>
         </li>
       );
-    });  
+    });
   }
 
-  return (
-    <React.Fragment>
-      {listItem}
-    </React.Fragment>
-  )
-}
+  return <React.Fragment>{listItem}</React.Fragment>;
+};
 
 List.propTypes = propTypes; // from Line 13
 List.defaultProps = defaultProps; // from Line 22
