@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 
 import './scss/app.scss';
-import Header from './components/DS/Header/Header';
-import Footer from './components/DS/Footer/Footer';
-import Main from './components/Pages/Main/Main';
+import Header from './code/Layout/Header/Header';
+import Footer from './code/Layout/Footer/Footer';
+import Main from './code/Pages/Main/Main';
 
 class App extends Component {
   render() {

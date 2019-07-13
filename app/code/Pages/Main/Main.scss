@@ -1,0 +1,21 @@
+// -----------------------------------------------------------------------------
+// Component  : Main styles
+// Created on : 17/3/2019 15:10:09
+// Created by : Vaibhav Shringarpure
+// -----------------------------------------------------------------------------
+
+.app-masthead {
+  background: $hm-yellow;
+  display: flex;
+  padding: 30px;
+  width: 100%;
+
+  &--title {
+    color: $hm-black;
+    margin-bottom: 0;
+  }
+
+  &__link {
+    margin-top: 30px;
+  }
+}
