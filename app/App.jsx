@@ -1,4 +1,7 @@
 import React, { Component } from 'react';
+import Prism from 'prismjs';
+import 'prismjs/themes/prism-tomorrow.css';
+import 'prismjs/components/prism-scss';
 
 import './scss/app.scss';
 import Header from './code/Layout/Header/Header';
@@ -6,6 +9,13 @@ import Footer from './code/Layout/Footer/Footer';
 import Main from './code/Pages/Main/Main';
 
 class App extends Component {
+  componentDidMount() {
+    Prism.highlightAll();
+  }
+
+  componentDidUpdate() {
+    Prism.highlightAll();
+  }
   render() {
     return (
       <React.Fragment>

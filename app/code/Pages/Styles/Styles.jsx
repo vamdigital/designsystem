@@ -6,6 +6,7 @@
 /* Import Statement Below */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import Snippet from '../../Common/Snippet/Snippet';
 
 /* Type Checking for PropTypes */
 const propTypes = {
@@ -33,13 +34,16 @@ class Styles extends Component {
   //Render Method returning JSX
   render() {
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col-12">
-            <h1>{this.props.title}</h1>
+      <section>
+        <div className="container">
+          <div className="row">
+            <div className="col-12">
+              <h1>{this.props.title}</h1>
+            </div>
           </div>
+          <Snippet language="scss" />
         </div>
-      </div>
+      </section>
     );
   }
 }
