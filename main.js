@@ -8,7 +8,6 @@ let navListObj;
 let folderDeleted;
 
 const componentType = argv['_'][0] ? argv['_'][0].toLowerCase() : '';
-
 const baseFolder =
   componentType === 'class'
     ? './Boilerplate/ClassComponent/'
@@ -16,16 +15,19 @@ const baseFolder =
     ? './Boilerplate/NavigationalComponent/'
     : './Boilerplate/FunctionalComponent';
 
-
 const appType = argv['_'][1] ? argv['_'][1].toLowerCase() : '';
 const destFolder =
-  appType === 'ds'
-    ? './app/components/DS/'
-    : appType === 'pages'
-    ? './app/components/Pages/'
-    : './app/components/Library/';
+  appType === 'styles'
+    ? './app/code/Components/Styles/'
+    : './app/code/Components/Components/';
 
-const navFolder = './app/components/DS/Navigation/'
+const navFolder =
+  appType === 'styles'
+    ? './app/code/Pages/Styles/'
+    : './app/code/Pages/Components/';
+
+const navFileName =
+  appType === 'styles' ? 'Styles-data.yaml' : 'Components-data.yaml';
 
 const renameFiles = () => {
   const newDir = destFolder + argv.$0 + '/';
@@ -76,22 +78,23 @@ const replaceFileContent = files => {
 
 const readNavDataFile = () => {
   const dir = navFolder;
-  const file = 'Navigation-data.yaml';
+  const file = navFileName;
   const noNav = argv['_'][0];
-
+  console.log(noNav);
   const fileData = yaml.load(fs.readFileSync(dir + file, 'utf8'));
-  navListObj = fileData.navigation.list;
+  navListObj =
+    appType === 'styles' ? fileData.styles.list : fileData.component.list;
   const objLength = navListObj !== null ? navListObj.length : 0;
   const id = objLength + 1;
   const name = argv.$0;
   const data = `\n     - id: ${id}\n       key: ${name}`;
+  fs.appendFile(dir + file, data, err => {
+    if (err) throw err;
+    console.log(`${argv.$0} add to Navigation `);
+  });
+  // if (noNav === undefined) {
 
-  if (noNav === undefined) {
-    fs.appendFile(dir + file, data, err => {
-      if (err) throw err;
-      console.log(`${argv.$0} add to Navigation `);
-    });
-  }
+  // }
 };
 
 const emptyDirectory = () => {

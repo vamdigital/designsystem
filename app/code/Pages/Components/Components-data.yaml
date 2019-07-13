@@ -11,3 +11,7 @@
 #     - tennis
 #     - golf
 #   attributes: { Handed: Left , BirthPlace: Home } - This is object
+component:
+  list:
+    - id: 1
+      key: Accordion

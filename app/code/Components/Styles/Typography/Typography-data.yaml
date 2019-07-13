@@ -1,5 +1,5 @@
-# Data for   : Styles Component
-# Created on : 23/3/2019 19:04:42
+# Data for   : Typography Component
+# Created on : 13/7/2019 6:21:05 PM
 # Created by : Vaibhav Shringarpure
 
 # sample YAML Data
@@ -11,13 +11,3 @@
 #     - tennis
 #     - golf
 #   attributes: { Handed: Left , BirthPlace: Home } - This is object
-styles:
-  list:
-    - id: 1
-      key: Color
-    - id: 2
-      key: Images
-    - id: 3
-      key: Typography
-    - id: 4
-      key: Accordion

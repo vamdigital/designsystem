@@ -6,6 +6,8 @@
 /* Import Statement Below */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import List from '../../Common/List/List';
+import data from './Styles-data.yaml';
 import Snippet from '../../Common/Snippet/Snippet';
 
 /* Type Checking for PropTypes */
@@ -33,6 +35,7 @@ class Styles extends Component {
 
   //Render Method returning JSX
   render() {
+    const ListItems = data.styles.list;
     return (
       <section>
         <div className="container">
@@ -41,7 +44,33 @@ class Styles extends Component {
               <h1>{this.props.title}</h1>
             </div>
           </div>
-          <Snippet language="scss" />
+          <div className="row">
+            <div className="col-4">
+              <nav>
+                <ul>
+                  <List listArray={ListItems} />
+                </ul>
+              </nav>
+            </div>
+            <div className="col-8">
+              <Snippet language="scss">
+                {`.app-masthead {
+    background: $hm-yellow;
+    display: flex;
+    padding: 30px;
+    width: 100%;
+    &--title {
+      color: $hm-black;
+      margin-bottom: 0;
+    }
+    &__link {
+      margin-top: 30px;
+    }
+  }
+                `}
+              </Snippet>
+            </div>
+          </div>
         </div>
       </section>
     );
