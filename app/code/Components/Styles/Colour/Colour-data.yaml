@@ -1,0 +1,56 @@
+# Data for   : Colour Component
+# Created on : 20/7/2019 3:59:54 PM
+# Created by : Vaibhav Shringarpure
+
+# sample YAML Data
+# person:
+#   firstname: Tom
+#   lastname: Smith
+#   year: 1982
+#   favorites: - This is array
+#     - tennis
+#     - golf
+#   attributes: { Handed: Left , BirthPlace: Home } - This is object
+colour:
+  - Text:
+      - $text-colour: '0b0c0c'
+      - $text-secondary-colour: '6f777b'
+  - Links:
+      - $link-colour: '005ea5'
+      - $link-hover-colour: '2b8cc4'
+      - $link-visited-colour: '4c2c92'
+      - $link-active-colour: '2b8cc4'
+  - Border:
+      - $border-colour: 'bfc1c3'
+      - $input-border-colour: '0b0c0c'
+  - Focus state:
+      - $focus-colour: 'ffbf47'
+      - $focus-text-colour: '0b0c0c'
+  - Error state:
+      - $error-colour: 'b10e1e'
+  - Success state:
+      - $success-colour: '28a197'
+  - Brand colour:
+      - $brand-colour: '005ea5'
+  - Colour palette:
+      - $purple-colour: '2e358b'
+      - $light-purple-colour: '6f72af'
+      - $bright-purple-colour: '912b88'
+      - $pink-colour: 'd53880'
+      - $light-pink-colour: 'f499be'
+      - $red-colour: 'b10e1e'
+      - $bright-red-colour: 'df3034'
+      - $orange-colour: 'f47738'
+      - $brown-colour: 'b58840'
+      - $yellow-colour: 'ffbf47'
+      - $light-green-colour: '85994b'
+      - $green-colour: '006435'
+      - $turquoise-colour: '28a197'
+      - $light-blue-colour: '2b8cc4'
+      - $blue-colour: '005ea5'
+      - $black-colour: '0b0c0c'
+      - $grey-1-colour: '6f777b'
+      - $grey-2-colour: 'bfc1c3'
+      - $grey-3-colour: 'dee0e2'
+      - $grey-4-colour: 'f8f8f8'
+      - $white-colour: 'ffffff'

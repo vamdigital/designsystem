@@ -13,3 +13,5 @@
 #   attributes: { Handed: Left , BirthPlace: Home } - This is object
 styles:
   list:
+    - id: 1
+      key: Colour

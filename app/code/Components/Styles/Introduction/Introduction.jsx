@@ -27,7 +27,7 @@ const Introduction = ({ title }) => {
   //Returns JSX below
   return (
     <>
-      <h3 className="section-title">{title}</h3>
+      <h2 className="section-title">{title}</h2>
       <p>
         Styles section helps you to know the brand guidelines for the project.
         It defines the Brand of the product. When creating components you need

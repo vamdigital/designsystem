@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import List from '../../Common/List/List';
 import data from './Styles-data.yaml';
 import Introduction from '../../Components/Styles/Introduction/Introduction';
+import Colour from '../../Components/Styles/Colour/Colour';
 
 /* Type Checking for PropTypes */
 const propTypes = {
@@ -55,6 +56,7 @@ class Styles extends Component {
             <div className="col-9">
               {/* Put your routes Here */}
               <Introduction />
+              <Colour />
             </div>
           </div>
         </div>
