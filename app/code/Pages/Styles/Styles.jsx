@@ -8,6 +8,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import List from '../../Common/List/List';
 import data from './Styles-data.yaml';
+import Introduction from '../../Components/Styles/Introduction/Introduction';
 
 /* Type Checking for PropTypes */
 const propTypes = {
@@ -44,14 +45,17 @@ class Styles extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-4">
+            <div className="col-3">
               <nav>
                 <ul>
                   <List listArray={ListItems} />
                 </ul>
               </nav>
             </div>
-            <div className="col-8">{/* Put your routes Here */}</div>
+            <div className="col-9">
+              {/* Put your routes Here */}
+              <Introduction />
+            </div>
           </div>
         </div>
       </section>
