@@ -11,4 +11,5 @@
 #     - tennis
 #     - golf
 #   attributes: { Handed: Left , BirthPlace: Home } - This is object
-styles: list:
+styles:
+  list:
