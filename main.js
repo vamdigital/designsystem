@@ -79,19 +79,22 @@ const replaceFileContent = files => {
 const readNavDataFile = () => {
   const dir = navFolder;
   const file = navFileName;
-  const noNav = argv['_'][0];
-  console.log(noNav);
+  const noNav = argv['_'][2];
   const fileData = yaml.load(fs.readFileSync(dir + file, 'utf8'));
   navListObj =
     appType === 'styles' ? fileData.styles.list : fileData.component.list;
   const objLength = navListObj !== null ? navListObj.length : 0;
   const id = objLength + 1;
   const name = argv.$0;
-  const data = `\n     - id: ${id}\n       key: ${name}`;
-  fs.appendFile(dir + file, data, err => {
-    if (err) throw err;
-    console.log(`${argv.$0} add to Navigation `);
-  });
+  const data = `\n    - id: ${id}\n      key: ${name}`;
+  if (noNav === undefined) {
+    fs.appendFile(dir + file, data, err => {
+      if (err) throw err;
+      console.log(`${argv.$0} add to Navigation `);
+    });
+  } else {
+    console.log(`Not added to navigation as noNav is ${noNav}`);
+  }
 };
 
 const emptyDirectory = () => {
