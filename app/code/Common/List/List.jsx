@@ -31,7 +31,7 @@ const removeFocus = e => {
 
 const List = props => {
   let listItem = null;
-  if (props.listArray.length) {
+  if (props.listArray !== null && props.listArray.length) {
     listItem = props.listArray.map((list, index) => {
       const keyVal = list.id ? list.id : index;
       return (

@@ -8,7 +8,6 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import List from '../../Common/List/List';
 import data from './Styles-data.yaml';
-import Snippet from '../../Common/Snippet/Snippet';
 
 /* Type Checking for PropTypes */
 const propTypes = {
@@ -52,24 +51,7 @@ class Styles extends Component {
                 </ul>
               </nav>
             </div>
-            <div className="col-8">
-              <Snippet language="scss">
-                {`.app-masthead {
-    background: $hm-yellow;
-    display: flex;
-    padding: 30px;
-    width: 100%;
-    &--title {
-      color: $hm-black;
-      margin-bottom: 0;
-    }
-    &__link {
-      margin-top: 30px;
-    }
-  }
-                `}
-              </Snippet>
-            </div>
+            <div className="col-8">{/* Put your routes Here */}</div>
           </div>
         </div>
       </section>
