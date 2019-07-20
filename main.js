@@ -92,9 +92,6 @@ const readNavDataFile = () => {
     if (err) throw err;
     console.log(`${argv.$0} add to Navigation `);
   });
-  // if (noNav === undefined) {
-
-  // }
 };
 
 const emptyDirectory = () => {
@@ -102,9 +99,8 @@ const emptyDirectory = () => {
 };
 
 const watcher = () => {
-  fs.watch(destFolder, (eventType, filename) => {
+  fs.watch(destFolder, filename => {
     folderDeleted = filename;
-
     return folderDeleted;
   });
 };
