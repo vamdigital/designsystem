@@ -48,14 +48,14 @@ class Styles extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-3">
-              <nav>
+            <div className="col-2">
+              <nav className="subpage-navigation">
                 <ul>
                   <List listArray={ListItems} />
                 </ul>
               </nav>
             </div>
-            <div className="col-9">
+            <div className="col-10">
               {/* Put your routes Here */}
               <Switch>
                 <Route path="/styles" exact render={() => <Introduction />} />
