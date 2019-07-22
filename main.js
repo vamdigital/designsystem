@@ -67,6 +67,7 @@ const replaceFileContent = files => {
     const fileData = fs.readFileSync(fileDir + '/' + file, 'utf8');
     const result = fileData
       .replace(/ComponentName/g, argv.$0)
+      .replace(/ComponentFileName/g, argv.$0)
       .replace(/date/g, dateObj);
     fs.writeFile(fileDir + '/' + file, result, 'utf8', function(err) {
       if (err) {

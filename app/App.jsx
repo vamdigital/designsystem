@@ -4,9 +4,9 @@ import 'prismjs/themes/prism-tomorrow.css';
 import 'prismjs/components/prism-scss';
 
 import './scss/app.scss';
-import Header from './code/Layout/Header/Header';
-import Footer from './code/Layout/Footer/Footer';
-import Main from './code/Pages/Main/Main';
+import Header from './code/Layout/Header';
+import Footer from './code/Layout/Footer';
+import Main from './code/Pages/Main';
 
 class App extends Component {
   componentDidMount() {

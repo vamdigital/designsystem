@@ -5,7 +5,7 @@
 
 /* Import Statement Below */
 import React, { Component } from 'react';
-import List from '../../Common/List/List';
+import List from '../../Common/List';
 
 import data from './Navigation-data.yaml';
 

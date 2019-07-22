@@ -6,7 +6,7 @@
 /* Import Statement Below */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import List from '../../Common/List/List';
+import List from '../../Common/List';
 import data from './Styles-data.yaml';
 
 /* Type Checking for PropTypes */
