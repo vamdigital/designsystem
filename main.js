@@ -86,7 +86,14 @@ const readNavDataFile = () => {
   const objLength = navListObj !== null ? navListObj.length : 0;
   const id = objLength + 1;
   const name = argv.$0;
-  const data = `\n    - id: ${id}\n      key: ${name}`;
+  //If styles or component
+  const data =
+    appType === 'styles'
+      ? `\n    - id: ${id}\n      key: ${name}\n      url: styles/${name.toLowerCase()}`
+      : appType === 'component'
+      ? `\n    - id: ${id}\n      key: ${name}\n      url: component/${name.toLowerCase()}`
+      : `\n    - id: ${id}\n      key: ${name}`;
+
   if (noNav === undefined) {
     fs.appendFile(dir + file, data, err => {
       if (err) throw err;
