@@ -5,7 +5,7 @@
 
 /* Import Statement Below */
 import React from 'react';
-import MastHead from '../../Common/MastHead/MastHead';
+import MastHead from '../../Common/MastHead';
 import { NavLink } from 'react-router-dom';
 /* Functional Component Function below */
 const Home = props => {

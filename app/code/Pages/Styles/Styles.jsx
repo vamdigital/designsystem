@@ -6,7 +6,7 @@
 /* Import Statement Below */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import List from '../../Common/List/List';
+import List from '../../Common/List';
 import data from './Styles-data.yaml';
 import { Switch, Route } from 'react-router-dom';
 import Introduction from '../../Components/Styles/Introduction/Introduction';

@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom';
 
 import Logo from '../../../assets/icons/ds_logo.svg';
 
-import SubHeader from '../SubHeader/SubHeader';
+import SubHeader from '../SubHeader';
 
 /* Type Checking for PropTypes */
 const propTypes = {

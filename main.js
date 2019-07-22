@@ -67,6 +67,7 @@ const replaceFileContent = files => {
     const fileData = fs.readFileSync(fileDir + '/' + file, 'utf8');
     const result = fileData
       .replace(/ComponentName/g, argv.$0)
+      .replace(/ComponentFileName/g, argv.$0)
       .replace(/date/g, dateObj);
     fs.writeFile(fileDir + '/' + file, result, 'utf8', function(err) {
       if (err) {
@@ -86,7 +87,14 @@ const readNavDataFile = () => {
   const objLength = navListObj !== null ? navListObj.length : 0;
   const id = objLength + 1;
   const name = argv.$0;
-  const data = `\n    - id: ${id}\n      key: ${name}`;
+  //If styles or component
+  const data =
+    appType === 'styles'
+      ? `\n    - id: ${id}\n      key: ${name}\n      url: styles/${name.toLowerCase()}`
+      : appType === 'component'
+      ? `\n    - id: ${id}\n      key: ${name}\n      url: component/${name.toLowerCase()}`
+      : `\n    - id: ${id}\n      key: ${name}`;
+
   if (noNav === undefined) {
     fs.appendFile(dir + file, data, err => {
       if (err) throw err;

@@ -8,11 +8,11 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 /* Import all Pages and Components Below */
-import Home from '../../Pages/Home/Home';
-import Started from '../../Pages/Started/Started';
-import Styles from '../../Pages/Styles/Styles';
-import Components from '../../Pages/Components/Components';
-import NotFound from '../../Pages/NotFound/NotFound';
+import Home from '../../Pages/Home';
+import Started from '../../Pages/Started';
+import Styles from '../../Pages/Styles';
+import Components from '../../Pages/Components';
+import NotFound from '../../Pages/NotFound';
 
 const homeTitle = 'Design your service using DS styles and components';
 

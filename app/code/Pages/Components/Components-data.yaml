@@ -15,3 +15,10 @@ component:
   list:
     - id: 1
       key: Accordion
+
+    - id: 2
+      key: Accordion
+      url: component/accordion
+    - id: 3
+      key: Accordion
+      url: component/accordion
