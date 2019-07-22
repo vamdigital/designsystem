@@ -9,9 +9,9 @@ import PropTypes from 'prop-types';
 import List from '../../Common/List';
 import data from './Styles-data.yaml';
 import { Switch, Route } from 'react-router-dom';
-import Introduction from '../../Components/Styles/Introduction/Introduction';
-import Colour from '../../Components/Styles/Colour/Colour';
-import Images from '../../Components/Styles/Images/Images';
+import Introduction from '../../Components/Styles/Introduction';
+import Colour from '../../Components/Styles/Colour';
+import Images from '../../Components/Styles/Images';
 
 /* Type Checking for PropTypes */
 const propTypes = {
