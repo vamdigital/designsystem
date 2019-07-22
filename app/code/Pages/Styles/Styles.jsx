@@ -8,8 +8,10 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import List from '../../Common/List/List';
 import data from './Styles-data.yaml';
+import { Switch, Route } from 'react-router-dom';
 import Introduction from '../../Components/Styles/Introduction/Introduction';
 import Colour from '../../Components/Styles/Colour/Colour';
+import Images from '../../Components/Styles/Images/Images';
 
 /* Type Checking for PropTypes */
 const propTypes = {
@@ -55,8 +57,11 @@ class Styles extends Component {
             </div>
             <div className="col-9">
               {/* Put your routes Here */}
-              <Introduction />
-              <Colour />
+              <Switch>
+                <Route path="/styles" exact render={() => <Introduction />} />
+                <Route path="/styles/colour" exact render={() => <Colour />} />
+                <Route path="/styles/images" exact render={() => <Images />} />
+              </Switch>
             </div>
           </div>
         </div>
