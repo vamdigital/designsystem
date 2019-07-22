@@ -36,174 +36,178 @@ $font-size-h4-mobile: 16px;
 $font-size-h4-desktop: 19px;
 
 /* Zero off all margins from text elements */
-:global{
-    p,
-    h1,
-    h2,
-    h3,
-    h4,
-    ul,
-    ol,
-    li {
+:global {
+  p,
+  h1,
+  h2,
+  h3,
+  h4,
+  ul,
+  ol,
+  li {
     font-weight: $base-font-weight;
     margin: 0;
+  }
+
+  /* Paragraph Styles - p tag */
+  p {
+    @include remsize(font-size, $font-size-base-mobile);
+    line-height: $line-height-l-mobile;
+    margin-bottom: 15px;
+    text-align: justify;
+
+    @include breakpoint('small') {
+      @include remsize(font-size, $font-size-base-desktop);
+      line-height: $line-height-l-desktop;
+      margin-bottom: 20px;
     }
 
-    /* Paragraph Styles - p tag */
-    p {
-      @include remsize(font-size, $font-size-base-mobile);
-      line-height: $line-height-l-mobile;
-      margin-bottom: 15px;
+    // Lead Paragraph
 
-      @include breakpoint('small') {
-        @include remsize(font-size, $font-size-base-desktop);
-        line-height: $line-height-l-desktop;
-        margin-bottom: 20px;
-      }
-
-      // Lead Paragraph
-
-      &.lead {
-        @include remsize(font-size, $font-size-lead-mobile);
-        line-height: $line-height-s-mobile;
-        margin-bottom: 20px;
-
-        @include breakpoint('small') {
-          @include remsize(font-size, $font-size-lead-desktop);
-          line-height: $line-height-s-desktop;
-          margin-bottom: 30px;
-        }
-      }
-
-      // Small Text
-
-      &.small {
-        @include remsize(font-size, $font-size-small);
-        line-height: $line-height-s-mobile;
-        margin-bottom: 20px;
-      }
-    }
-
-    /* Headings */
-    h1 {
-      @include remsize(font-size, $font-size-h1-mobile);
-      font-weight: $bold-font-weight;
-      line-height: $line-height-xs-mobile;
-      margin-bottom: 30px;
-
-      @include breakpoint('small') {
-        @include remsize(font-size, $font-size-h1-desktop);
-        line-height: $line-height-xs-desktop;
-        margin-bottom: 50px;
-      }
-    }
-
-    h2 {
-      @include remsize(font-size, $font-size-h2-mobile);
-      font-weight: $bold-font-weight;
+    &.lead {
+      @include remsize(font-size, $font-size-lead-mobile);
       line-height: $line-height-s-mobile;
       margin-bottom: 20px;
 
       @include breakpoint('small') {
-        @include remsize(font-size, $font-size-h2-desktop);
-        line-height: $line-height-xs-desktop;
-        margin-bottom: 20px;
-      }
-    }
-
-    h3 {
-      @include remsize(font-size, $font-size-h3-mobile);
-      font-weight: $bold-font-weight;
-      line-height: $line-height-s-mobile;
-      margin-bottom: 15px;
-
-      @include breakpoint('small') {
-        @include remsize(font-size, $font-size-h3-desktop);
+        @include remsize(font-size, $font-size-lead-desktop);
         line-height: $line-height-s-desktop;
-        margin-bottom: 20px;
+        margin-bottom: 30px;
       }
     }
 
-    h4 {
-      @include remsize(font-size, $font-size-h4-mobile);
-      line-height: $line-height-l-mobile;
-      margin-bottom: 15px;
+    // Small Text
 
-      @include breakpoint('small') {
-        @include remsize(font-size, $font-size-h4-desktop);
-        line-height: $line-height-l-desktop;
-        margin-bottom: 20px;
-      }
+    &.small {
+      @include remsize(font-size, $font-size-small);
+      line-height: $line-height-s-mobile;
+      margin-bottom: 20px;
+    }
+  }
+
+  /* Headings */
+  h1 {
+    @include remsize(font-size, $font-size-h1-mobile);
+    font-weight: $bold-font-weight;
+    line-height: $line-height-xs-mobile;
+    margin-bottom: 30px;
+
+    @include breakpoint('small') {
+      @include remsize(font-size, $font-size-h1-desktop);
+      line-height: $line-height-xs-desktop;
+      margin-bottom: 50px;
+    }
+  }
+
+  h2 {
+    @include remsize(font-size, $font-size-h2-mobile);
+    font-weight: $bold-font-weight;
+    line-height: $line-height-s-mobile;
+    margin-bottom: 20px;
+
+    @include breakpoint('small') {
+      @include remsize(font-size, $font-size-h2-desktop);
+      line-height: $line-height-xs-desktop;
+      margin-bottom: 20px;
+    }
+  }
+
+  h3 {
+    @include remsize(font-size, $font-size-h3-mobile);
+    font-weight: $bold-font-weight;
+    line-height: $line-height-s-mobile;
+    margin-bottom: 15px;
+
+    @include breakpoint('small') {
+      @include remsize(font-size, $font-size-h3-desktop);
+      line-height: $line-height-s-desktop;
+      margin-bottom: 20px;
+    }
+  }
+
+  h4 {
+    @include remsize(font-size, $font-size-h4-mobile);
+    line-height: $line-height-l-mobile;
+    margin-bottom: 15px;
+
+    @include breakpoint('small') {
+      @include remsize(font-size, $font-size-h4-desktop);
+      line-height: $line-height-l-desktop;
+      margin-bottom: 20px;
+    }
+  }
+
+  /* Anchor tags */
+
+  a {
+    border-bottom: 4px solid;
+    border-color: transparent;
+    color: $hm-link-colour;
+    display: inline-block;
+    line-height: $line-height-l-mobile;
+    margin-bottom: 15px;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+    @include remsize(font-size, $font-size-base-mobile);
+
+    @include breakpoint('small') {
+      @include remsize(font-size, $font-size-base-desktop);
+      line-height: $line-height-l-desktop;
+      margin-bottom: 20px;
     }
 
-    /* Anchor tags */
+    &:hover {
+      border-color: $hm-link-hover-colour;
+      color: $hm-link-hover-colour;
+    }
 
-    a {
-      border-bottom: 4px solid;
-      border-color: transparent;
-      color: $hm-link-colour;
-      display: inline-block;
-      line-height: $line-height-l-mobile;
-      margin-bottom: 15px;
-      text-decoration: none;
-      transition: all .2s ease-in-out;
-      @include remsize(font-size, $font-size-base-mobile);
+    &:visited {
+      border-color: $hm-link-visited-colour;
+      color: $hm-link-visited-colour;
+    }
 
-      @include breakpoint('small') {
-        @include remsize(font-size, $font-size-base-desktop);
-        line-height: $line-height-l-desktop;
-        margin-bottom: 20px;
-      }
+    &:focus {
+      color: $hm-link-active-colour;
+      outline: 3px solid $hm-focus-colour;
+      outline-offset: 0;
+    }
 
-      &:hover {
-        border-color: $hm-link-hover-colour;
-        color: $hm-link-hover-colour;
-      }
-      
-      &:visited {
-        border-color: $hm-link-visited-colour;
-        color: $hm-link-visited-colour;
-      }
+    &.active {
+      border-color: $hm-link-active-colour;
+      color: $hm-link-active-colour;
+    }
 
+    /* Link Button */
+    &.link-btn {
+      background: $hm-orange;
+      color: $hm-white;
+      padding: 15px;
+      transition: all 0.2s linear;
+
+      &:hover,
+      &:active,
       &:focus {
-        color: $hm-link-active-colour;
-        outline: 3px solid $hm-focus-colour;
-        outline-offset: 0;
+        background: $hm-white;
+        border-color: $hm-black;
+        color: $hm-orange;
       }
 
-      &.active {
-        border-color: $hm-link-active-colour;
-        color: $hm-link-active-colour;
-      }
+      &--reverse {
+        background: $hm-white;
+        color: $hm-orange;
 
-      /* Link Button */
-      &.link-btn {
-        background: $hm-orange;
-        color: $hm-white;
-        padding: 15px;
-        transition: all .2s linear;
-
-        &:hover, &:active, &:focus {
-          background: $hm-white;
-          border-color: $hm-black;
-          color: $hm-orange;
-        };
-
-        &--reverse {
-          background: $hm-white;
-          color: $hm-orange;
-
-          &:hover, &:active, &:focus {
-            background: $hm-orange;
-            color: $hm-white;
-
-          };
+        &:hover,
+        &:active,
+        &:focus {
+          background: $hm-orange;
+          color: $hm-white;
         }
       }
     }
+  }
 
-    /* Unordered List */
-    ul {
+  /* Unordered List */
+  ul {
     li {
       @include remsize(font-size, $font-size-base-mobile);
       line-height: $line-height-l-mobile;
@@ -229,11 +233,17 @@ $font-size-h4-desktop: 19px;
         margin-left: 16px;
       }
     }
-    }
+  }
 
-    /* Ordered List */
+  /* Section Title */
+  .section-title {
+    display: inline-block;
+    @include remsize(padding-bottom, 5px);
+    border-bottom: 2px solid $hm-blue;
+  }
 
-    ol {
+  /* Ordered List */
+  ol {
     padding-left: 5px;
     li {
       @include remsize(font-size, $font-size-base-mobile);
