@@ -96,4 +96,11 @@
       padding: 0.5em 0 0;
     }
   }
+
+  .figcaption,
+  figcaption {
+    display: block;
+    margin: 5px 0;
+    @include remsize(font-size, 14px);
+  }
 }

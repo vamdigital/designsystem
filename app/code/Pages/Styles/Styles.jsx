@@ -60,7 +60,16 @@ class Styles extends Component {
               <Switch>
                 <Route path="/styles" exact render={() => <Introduction />} />
                 <Route path="/styles/colour" exact render={() => <Colour />} />
-                <Route path="/styles/images" exact render={() => <Images />} />
+                <Route
+                  path="/styles/images"
+                  exact
+                  render={() => (
+                    <Images
+                      altText="Empty cafe at night time Photo by Anton Lammert on Unsplash"
+                      figcaption="Photo by Anton Lammert on Unsplash"
+                    />
+                  )}
+                />
               </Switch>
             </div>
           </div>
