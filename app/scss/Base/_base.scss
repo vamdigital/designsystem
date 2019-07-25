@@ -103,4 +103,8 @@
     margin: 5px 0;
     @include remsize(font-size, 14px);
   }
+
+  .code-snippet-title {
+    margin: 20px 0;
+  }
 }

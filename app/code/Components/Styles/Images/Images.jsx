@@ -8,6 +8,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import DesktopSource from '../../../../assets/images/empty_cafe_800w.jpg';
 import MobileSource from '../../../../assets/images/empty_cafe_400w.jpg';
+import Snippet from '../../../Common/Snippet';
 
 /* Type Checking for PropTypes */
 const propTypes = {
@@ -59,9 +60,19 @@ const Images = ({
       <picture>
         <source media="(max-width: 799px)" srcSet={mobileSource} />
         <source media="(min-width: 800px)" srcSet={desktopSource} />
-        <img src={desktopSource} alt={altText} />
+        <img src={desktopSource} alt={altText} title={altText} />
         <span className="figcaption">{figcaption}</span>
       </picture>
+      <h3 className="code-snippet-title">Code Snippet</h3>
+      <Snippet language="html">
+        {`<picture>
+  <source media="(max-width: 799px)" srcset="path/to/mobile/source" />
+  <source media="(min-width: 800px)" srcset="path/to/desktop/source" />
+  <img src="path/to/desktop/source" alt="alternate Text" />
+  <span class="figcaption">Figcaption</span>
+</picture>
+  `}
+      </Snippet>
     </>
   );
 };

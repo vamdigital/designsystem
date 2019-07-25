@@ -17,7 +17,7 @@ const Snippet = ({ language, children }) => {
       <div className="language">{language}</div>
       <div className="code-snippet">
         <pre className={`language-${language}`}>
-          <code className={`language-${language}`}>{children}</code>
+          <code className={`language-${language}`}>{`${children}`}</code>
         </pre>
       </div>
     </div>
