@@ -59,7 +59,7 @@ const Images = ({
       </p>
       <div ref={snippet}>
         <picture>
-          <source media="(max-width: 799px)" srcSet={mobileSource} />
+          <source media="(max-width: 790px)" srcSet={mobileSource} />
           <source media="(min-width: 800px)" srcSet={desktopSource} />
           <img src={desktopSource} alt={altText} title={altText} />
           <span className="figcaption">{figcaption}</span>
