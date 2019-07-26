@@ -3,21 +3,26 @@
  * Created by	: Vaibhav Shringarpure
  */
 
-import React, { useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 // Import PrismJS package
 import Prism from 'prismjs';
+import Process from '../../Common/FormatHTML';
 
-const Snippet = ({ language, children }) => {
+const Snippet = ({ language, codeRef }) => {
+  const [code, setCode] = useState(null);
   useEffect(() => {
     Prism.highlightAll();
-  });
+    const markup = codeRef.current.innerHTML;
+    const formattedMarkup = Process(markup);
+    setCode(formattedMarkup);
+  }, [code]);
 
   return (
     <div className="row">
       <div className="language">{language}</div>
       <div className="code-snippet">
         <pre className={`language-${language}`}>
-          <code className={`language-${language}`}>{`${children}`}</code>
+          <code className={`language-${language}`}>{code}</code>
         </pre>
       </div>
     </div>

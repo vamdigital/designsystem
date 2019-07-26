@@ -4,12 +4,11 @@
  */
 
 /* Import Statement Below */
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import DesktopSource from '../../../../assets/images/empty_cafe_800w.jpg';
 import MobileSource from '../../../../assets/images/empty_cafe_400w.jpg';
 import Snippet from '../../../Common/Snippet';
-import Process from '../../../Common/FormatHTML';
 /* Type Checking for PropTypes */
 const propTypes = {
   // id: PropTypes.number.isRequired,
@@ -40,15 +39,7 @@ const Images = ({
   altText
 }) => {
   //Define your Methods Here
-
-  const [code, setCode] = useState(null);
   const snippet = useRef(null);
-
-  useEffect(() => {
-    const markup = snippet.current.innerHTML;
-    const formattedMarkup = Process(markup);
-    setCode(formattedMarkup);
-  }, []);
 
   //Returns JSX below
   return (
@@ -76,7 +67,7 @@ const Images = ({
       </div>
 
       <h3 className="code-snippet-title">Code Snippet</h3>
-      <Snippet language="html">{code}</Snippet>
+      <Snippet language="html" codeRef={snippet} />
     </>
   );
 };
