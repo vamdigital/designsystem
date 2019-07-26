@@ -4,12 +4,12 @@
  */
 
 /* Import Statement Below */
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import DesktopSource from '../../../../assets/images/empty_cafe_800w.jpg';
 import MobileSource from '../../../../assets/images/empty_cafe_400w.jpg';
 import Snippet from '../../../Common/Snippet';
-
+import Process from '../../../Common/FormatHTML';
 /* Type Checking for PropTypes */
 const propTypes = {
   // id: PropTypes.number.isRequired,
@@ -41,6 +41,15 @@ const Images = ({
 }) => {
   //Define your Methods Here
 
+  const [code, setCode] = useState(null);
+  const snippet = useRef(null);
+
+  useEffect(() => {
+    const markup = snippet.current.innerHTML;
+    const formattedMarkup = Process(markup);
+    setCode(formattedMarkup);
+  }, []);
+
   //Returns JSX below
   return (
     <>
@@ -57,22 +66,17 @@ const Images = ({
           must provide an alternate text for accessibility reason.
         </code>
       </p>
-      <picture>
-        <source media="(max-width: 799px)" srcSet={mobileSource} />
-        <source media="(min-width: 800px)" srcSet={desktopSource} />
-        <img src={desktopSource} alt={altText} title={altText} />
-        <span className="figcaption">{figcaption}</span>
-      </picture>
+      <div ref={snippet}>
+        <picture>
+          <source media="(max-width: 799px)" srcSet={mobileSource} />
+          <source media="(min-width: 800px)" srcSet={desktopSource} />
+          <img src={desktopSource} alt={altText} title={altText} />
+          <span className="figcaption">{figcaption}</span>
+        </picture>
+      </div>
+
       <h3 className="code-snippet-title">Code Snippet</h3>
-      <Snippet language="html">
-        {`<picture>
-  <source media="(max-width: 799px)" srcset="path/to/mobile/source" />
-  <source media="(min-width: 800px)" srcset="path/to/desktop/source" />
-  <img src="path/to/desktop/source" alt="alternate Text" />
-  <span class="figcaption">Figcaption</span>
-</picture>
-  `}
-      </Snippet>
+      <Snippet language="html">{code}</Snippet>
     </>
   );
 };
