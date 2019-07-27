@@ -104,7 +104,17 @@
     @include remsize(font-size, 14px);
   }
 
+  .code-sample {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid $hm-blue;
+    padding: 1.2em;
+  }
+  .code-sample-title {
+    margin: 20px 0;
+  }
   .code-snippet-title {
     margin: 20px 0;
+    font-weight: 600;
   }
 }

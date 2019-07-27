@@ -54,7 +54,7 @@ const Colour = ({ title }) => {
           return Object.keys(arr).map((title, index) => {
             return [
               <div key={index} className={Styles['colour-list-title']}>
-                <h3 className={Styles['colour-list-title__text']}>{title}</h3>
+                <h4 className={Styles['colour-list-title__text']}>{title}</h4>
               </div>,
               <div key={index + 1} className={Styles['colour-list']}>
                 {Object.keys(arr).map(arrayKey => {

@@ -3,3 +3,14 @@
 // Created on : 22/7/2019 12:15:06 AM
 // Created by : Vaibhav Shringarpure
 // -----------------------------------------------------------------------------
+
+.picture {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+
+  .figcaption {
+    text-align: left;
+    padding-left: 10px;
+  }
+}

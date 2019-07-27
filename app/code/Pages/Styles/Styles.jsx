@@ -12,6 +12,7 @@ import { Switch, Route } from 'react-router-dom';
 import Introduction from '../../Components/Styles/Introduction';
 import Colour from '../../Components/Styles/Colour';
 import Images from '../../Components/Styles/Images';
+import Typography from '../../Components/Styles/Typography/Typography';
 
 /* Type Checking for PropTypes */
 const propTypes = {
@@ -69,6 +70,11 @@ class Styles extends Component {
                       figcaption="Photo by Anton Lammert on Unsplash"
                     />
                   )}
+                />
+                <Route
+                  path="/styles/typography"
+                  exact
+                  render={() => <Typography />}
                 />
               </Switch>
             </div>

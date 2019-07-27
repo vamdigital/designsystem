@@ -19,3 +19,7 @@ styles:
     - id: 2
       key: Images
       url: styles/images
+
+    - id: 3
+      key: Typography
+      url: styles/typography

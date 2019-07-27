@@ -8,6 +8,7 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import DesktopSource from '../../../../assets/images/empty_cafe_800w.jpg';
 import MobileSource from '../../../../assets/images/empty_cafe_400w.jpg';
+import Styles from './Images.scss';
 import Snippet from '../../../Common/Snippet';
 
 /* Type Checking for PropTypes */
@@ -57,16 +58,18 @@ const Images = ({
           must provide an alternate text for accessibility reason.
         </code>
       </p>
-      <div ref={snippet}>
-        <picture>
+      <div className="code-sample" ref={snippet}>
+        <picture className={Styles['picture']}>
           <source media="(max-width: 790px)" srcSet={mobileSource} />
           <source media="(min-width: 800px)" srcSet={desktopSource} />
           <img src={desktopSource} alt={altText} title={altText} />
-          <span className="figcaption">{figcaption}</span>
+          <span className={`figcaption ${Styles['figcaption']}`}>
+            {figcaption}
+          </span>
         </picture>
       </div>
 
-      <h3 className="code-snippet-title">Code Snippet</h3>
+      <h4 className="code-snippet-title">Code Snippet</h4>
       <Snippet language="html" codeRef={snippet} />
     </>
   );
