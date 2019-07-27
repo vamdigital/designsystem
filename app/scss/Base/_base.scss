@@ -117,4 +117,23 @@
     margin: 20px 0;
     font-weight: 600;
   }
+
+  .back-to-top {
+    position: fixed;
+    bottom: 50px;
+    margin-left: 30px;
+    margin-bottom: 30px;
+
+    .back-to-top-hidden {
+      position: absolute !important;
+      width: 1px !important;
+      height: 1px !important;
+      margin: 0 !important;
+      overflow: hidden !important;
+      clip: rect(0 0 0 0) !important;
+      -webkit-clip-path: inset(50%) !important;
+      clip-path: inset(50%) !important;
+      white-space: nowrap !important;
+    }
+  }
 }
