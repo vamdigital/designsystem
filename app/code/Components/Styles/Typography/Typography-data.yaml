@@ -1,0 +1,13 @@
+# Data for   : Typography Component
+# Created on : 27/7/2019 3:50:36 PM
+# Created by : Vaibhav Shringarpure
+
+# sample YAML Data
+# person:
+#   firstname: Tom
+#   lastname: Smith
+#   year: 1982
+#   favorites: - This is array
+#     - tennis
+#     - golf
+#   attributes: { Handed: Left , BirthPlace: Home } - This is object

@@ -239,7 +239,7 @@ $font-size-h4-desktop: 19px;
   .section-title {
     display: inline-block;
     @include remsize(padding-bottom, 5px);
-    border-bottom: 2px solid $hm-blue;
+    border-bottom: 4px solid $hm-blue;
   }
 
   /* Ordered List */

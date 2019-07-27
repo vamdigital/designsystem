@@ -84,4 +84,37 @@
       padding-top: 0;
     }
   }
+
+  .component-section {
+    padding: 20px 0;
+  }
+
+  .subpage-navigation {
+    a {
+      @include remsize(font-size, 18px);
+      display: inline-block;
+      padding: 0.5em 0 0;
+    }
+  }
+
+  .figcaption,
+  figcaption {
+    display: block;
+    margin: 5px 0;
+    @include remsize(font-size, 14px);
+  }
+
+  .code-sample {
+    display: block;
+    margin: 0 auto;
+    border: 1px solid $hm-blue;
+    padding: 1.2em;
+  }
+  .code-sample-title {
+    margin: 20px 0;
+  }
+  .code-snippet-title {
+    margin: 20px 0;
+    font-weight: 600;
+  }
 }

@@ -8,7 +8,11 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import List from '../../Common/List';
 import data from './Styles-data.yaml';
-import Introduction from '../../Components/Styles/Introduction/Introduction';
+import { Switch, Route } from 'react-router-dom';
+import Introduction from '../../Components/Styles/Introduction';
+import Colour from '../../Components/Styles/Colour';
+import Images from '../../Components/Styles/Images';
+import Typography from '../../Components/Styles/Typography/Typography';
 
 /* Type Checking for PropTypes */
 const propTypes = {
@@ -45,16 +49,34 @@ class Styles extends Component {
             </div>
           </div>
           <div className="row">
-            <div className="col-3">
-              <nav>
+            <div className="col-2">
+              <nav className="subpage-navigation">
                 <ul>
                   <List listArray={ListItems} />
                 </ul>
               </nav>
             </div>
-            <div className="col-9">
+            <div className="col-10">
               {/* Put your routes Here */}
-              <Introduction />
+              <Switch>
+                <Route path="/styles" exact render={() => <Introduction />} />
+                <Route path="/styles/colour" exact render={() => <Colour />} />
+                <Route
+                  path="/styles/images"
+                  exact
+                  render={() => (
+                    <Images
+                      altText="Empty cafe at night time Photo by Anton Lammert on Unsplash"
+                      figcaption="Photo by Anton Lammert on Unsplash"
+                    />
+                  )}
+                />
+                <Route
+                  path="/styles/typography"
+                  exact
+                  render={() => <Typography />}
+                />
+              </Switch>
             </div>
           </div>
         </div>
