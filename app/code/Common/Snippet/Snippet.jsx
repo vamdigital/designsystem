@@ -12,6 +12,7 @@ import Toaster from '../../Common/Toaster';
 const Snippet = ({ language, codeRef }) => {
   const [code, setCode] = useState(null);
   const [isVisible, setIsVisible] = useState(null);
+  const [show, setShow] = useState(false);
   const codesnipp = useRef(null); // Copy to Clipboard reference
 
   useEffect(() => {
@@ -32,6 +33,7 @@ const Snippet = ({ language, codeRef }) => {
       document.execCommand('copy');
       // Create Toast Message Here
       setIsVisible(true);
+      setShow(true);
     } catch (err) {
       console.log('Oops, unable to copy');
     }
@@ -39,6 +41,10 @@ const Snippet = ({ language, codeRef }) => {
     window.getSelection().removeAllRanges();
     setTimeout(() => {
       setIsVisible(false);
+    }, 4000);
+
+    setTimeout(() => {
+      setShow(false);
     }, 6000);
   };
 
@@ -60,9 +66,7 @@ const Snippet = ({ language, codeRef }) => {
           <code className={`language-${language}`}>{code}</code>
         </pre>
       </div>
-      {isVisible && (
-        <Toaster message="Copied successfully" isVisible={isVisible} />
-      )}
+      {show && <Toaster message="Copied successfully" isVisible={isVisible} />}
     </div>
   );
 };
