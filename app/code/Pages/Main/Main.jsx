@@ -4,7 +4,7 @@
  */
 
 /* Import Statement Below */
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 /* Import all Pages and Components Below */
@@ -17,6 +17,15 @@ import NotFound from '../../Pages/NotFound';
 const homeTitle = 'Design your service using DS styles and components';
 
 const Main = () => {
+  const [isTop, setIsTop] = useState(false);
+  window.onscroll = function() {
+    const topPos = window.pageYOffset;
+    if (topPos >= 450) {
+      setIsTop(true);
+    } else {
+      setIsTop(false);
+    }
+  };
   return (
     <main>
       <Switch>
@@ -26,6 +35,12 @@ const Main = () => {
         <Route path="/components" render={() => <Components />} />
         <Route component={NotFound} />
       </Switch>
+
+      <div className="back-to-top">
+        <a href="#top" className={isTop ? '' : 'back-to-top-hidden'}>
+          Back to top
+        </a>
+      </div>
     </main>
   );
 };
