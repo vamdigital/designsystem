@@ -4,10 +4,11 @@
  */
 
 /* Import Statement Below */
-import React from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import data from './Colour-data.yaml';
 import Styles from './Colour.scss';
+import Toaster from '../../../Common/Toaster';
 
 /* Type Checking for PropTypes */
 const propTypes = {
@@ -26,6 +27,38 @@ const defaultProps = {
 const Colour = ({ title }) => {
   //Define your Methods Here
   const dataObj = data.colour;
+  const [isVisible, setIsVisible] = useState(null);
+  const [show, setShow] = useState(false);
+
+  const codeCopy = text => {
+    let input = document.createElement('input');
+    document.body.appendChild(input);
+    input.value = text;
+    input.select();
+    try {
+      document.execCommand('copy');
+      console.log('copied successful');
+      // Create Toast Message Here
+      setIsVisible(true);
+      setShow(true);
+    } catch (err) {
+      console.log('Oops, unable to copy');
+    }
+    // Remove the selections
+    input.remove();
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 4000);
+
+    setTimeout(() => {
+      setShow(false);
+    }, 6000);
+  };
+
+  const copyToClipBoard = clickedItem => {
+    const text = `#${clickedItem}`;
+    codeCopy(text);
+  };
 
   //Returns JSX below
   return (
@@ -66,6 +99,9 @@ const Colour = ({ title }) => {
                           key={index}
                           className={[Styles['colour-list__item']].join(' ')}
                           style={{ backgroundColor: `#${item[itemKey]}` }}
+                          onClick={() => {
+                            copyToClipBoard(item[itemKey]);
+                          }}
                         >
                           <div
                             className={[Styles['colour-list__label']].join(' ')}
@@ -83,6 +119,9 @@ const Colour = ({ title }) => {
             ];
           });
         })}
+        {show && (
+          <Toaster message="Copied successfully" isVisible={isVisible} />
+        )}
       </div>
     </>
   );
