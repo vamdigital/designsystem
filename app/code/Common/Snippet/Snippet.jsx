@@ -7,10 +7,11 @@ import React, { useState, useEffect, useRef } from 'react';
 // Import PrismJS package
 import Prism from 'prismjs';
 import Process from '../../Common/FormatHTML';
+import Toaster from '../../Common/Toaster';
 
 const Snippet = ({ language, codeRef }) => {
   const [code, setCode] = useState(null);
-
+  const [isVisible, setIsVisible] = useState(null);
   const codesnipp = useRef(null); // Copy to Clipboard reference
 
   useEffect(() => {
@@ -18,6 +19,7 @@ const Snippet = ({ language, codeRef }) => {
     const markup = codeRef.current.innerHTML;
     const formattedMarkup = Process(markup);
     setCode(formattedMarkup);
+    setIsVisible(false);
   }, [code]);
 
   const codeCopy = node => {
@@ -28,13 +30,18 @@ const Snippet = ({ language, codeRef }) => {
     try {
       // Now that we've selected the content, execute the copy command
       document.execCommand('copy');
-      console.log('Success '); // Create Toast Message Here
+      // Create Toast Message Here
+      setIsVisible(true);
     } catch (err) {
       console.log('Oops, unable to copy');
     }
     // Remove the selections
     window.getSelection().removeAllRanges();
+    setTimeout(() => {
+      setIsVisible(false);
+    }, 6000);
   };
+
   return (
     <div className="row">
       <div className="language">
@@ -53,6 +60,9 @@ const Snippet = ({ language, codeRef }) => {
           <code className={`language-${language}`}>{code}</code>
         </pre>
       </div>
+      {isVisible && (
+        <Toaster message="Copied successfully" isVisible={isVisible} />
+      )}
     </div>
   );
 };

@@ -9,6 +9,7 @@ import PropTypes from 'prop-types';
 import DesktopSource from '../../../../assets/images/empty_cafe_800w.jpg';
 import MobileSource from '../../../../assets/images/empty_cafe_400w.jpg';
 import Snippet from '../../../Common/Snippet';
+
 /* Type Checking for PropTypes */
 const propTypes = {
   // id: PropTypes.number.isRequired,
@@ -40,7 +41,6 @@ const Images = ({
 }) => {
   //Define your Methods Here
   const snippet = useRef(null);
-
   //Returns JSX below
   return (
     <>
