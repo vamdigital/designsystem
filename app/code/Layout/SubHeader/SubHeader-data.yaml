@@ -13,11 +13,8 @@
 #   attributes: { Handed: Left , BirthPlace: Home } - This is object
 subheader:
   - id: 1
-    key: Getting Started
-    url: started
-  - id: 2
     key: Styles
     url: styles
-  - id: 3
+  - id: 2
     key: Components
     url: components

@@ -38,17 +38,6 @@ const MastHead = props => {
               <h1 className={[Styles['app-masthead--title']].join(' ')}>
                 {props.title}
               </h1>
-              <NavLink
-                exact
-                to="/started"
-                className={[
-                  'link-btn link-btn--reverse',
-                  Styles['app-masthead__link']
-                ].join(' ')}
-                title={props.linkText}
-              >
-                {props.linkText}
-              </NavLink>
             </div>
           </div>
         </div>
