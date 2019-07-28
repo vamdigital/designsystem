@@ -6,7 +6,6 @@
 /* Import Statement Below */
 import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
-import Style from './Typography.scss';
 
 import Snippet from '../../../Common/Snippet';
 /* Type Checking for PropTypes */
@@ -74,23 +73,15 @@ const Typography = ({ title }) => {
 
       <h3 className="code-sample-title">Headings with Caption</h3>
       <div className="code-sample" ref={caption}>
-        <span className={`${Style['caption']} ${Style['caption--xl']}`}>
-          Caption - xl
-        </span>
+        <span className="caption caption--xl">Caption - xl</span>
         <h1> Design system heading - xl </h1>
 
-        <span className={`${Style['caption']} ${Style['caption--l']}`}>
-          Caption - l
-        </span>
+        <span className="caption caption--l">Caption - l</span>
         <h2> Design System heading - l </h2>
-        <span className={`${Style['caption']} ${Style['caption--m']}`}>
-          Caption - m
-        </span>
+        <span className="caption caption--m">Caption - m</span>
         <h3> Design System heading - m </h3>
 
-        <span className={`${Style['caption']} ${Style['caption--s']}`}>
-          Caption - s
-        </span>
+        <span className="caption caption--s">Caption - s</span>
         <h4> Design System heading - s </h4>
       </div>
       <h4 className="code-snippet-title">Code Snippet</h4>

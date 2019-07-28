@@ -9,8 +9,6 @@ import List from '../../Common/List';
 
 import data from './Navigation-data.yaml';
 
-import NavStyles from './Navigation.scss';
-
 /* Stateful Component Class Below */
 class Navigation extends Component {
   //Constructor Method below
@@ -28,7 +26,7 @@ class Navigation extends Component {
     return (
       <React.Fragment>
         <ul>
-          <List listArray={ListItems} listLinkClassName={NavStyles.navlink} />
+          <List listArray={ListItems} listLinkClassName="navlink" />
         </ul>
       </React.Fragment>
     );

@@ -9,8 +9,6 @@ import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import NotFoundImage from '../../../assets/images/notFound.png';
 
-import Styles from './NotFound.scss';
-
 /* Type Checking for PropTypes */
 const propTypes = {
   // id: PropTypes.number.isRequired,
@@ -37,14 +35,14 @@ const NotFound = props => {
     <section>
       <div className="container">
         <div className="row">
-          <div className={[Styles['not-found']]}>
-            <div className={['col-6', Styles['text']].join(' ')}>
+          <div className="not-found">
+            <div className="col-6 text">
               <h2>{props.title}</h2>
               <p>{props.subtitle}</p>
               <NavLink
                 exact
                 to="/"
-                className={['link-btn link-btn--reverse'].join(' ')}
+                className="link-btn link-btn--reverse"
                 title={props.linkText}
               >
                 {props.linkText}
@@ -52,8 +50,8 @@ const NotFound = props => {
             </div>
           </div>
 
-          <div className={['col-6', Styles['not-found']].join(' ')}>
-            <div className={Styles['image']}>
+          <div className="col-6 not-found">
+            <div className="image">
               <img src={NotFoundImage} alt="404 Not Found" />
             </div>
           </div>
