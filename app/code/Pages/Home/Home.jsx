@@ -15,7 +15,7 @@ const Home = props => {
   return (
     <React.Fragment>
       {/*Mast Head Starts here*/}
-      <MastHead title={props.title} linkText={props.linkText} />
+      <MastHead title={props.title} />
       {/*Mast Head Ends here*/}
       <section>
         <div className="container">

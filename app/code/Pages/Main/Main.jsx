@@ -9,7 +9,6 @@ import { Route, Switch } from 'react-router-dom';
 
 /* Import all Pages and Components Below */
 import Home from '../../Pages/Home';
-import Started from '../../Pages/Started';
 import Styles from '../../Pages/Styles';
 import Components from '../../Pages/Components';
 import NotFound from '../../Pages/NotFound';
@@ -30,7 +29,6 @@ const Main = () => {
     <main>
       <Switch>
         <Route exact path="/" render={() => <Home title={homeTitle} />} />
-        <Route path="/started" render={() => <Started />} />
         <Route path="/styles" render={() => <Styles />} />
         <Route path="/components" render={() => <Components />} />
         <Route component={NotFound} />
