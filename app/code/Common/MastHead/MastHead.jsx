@@ -7,7 +7,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import Styles from './MastHead.scss';
 
 /* Type Checking for PropTypes */
 const propTypes = {
@@ -31,13 +30,11 @@ const MastHead = props => {
   //Returns JSX below
   return (
     <React.Fragment>
-      <div className={[Styles['app-masthead']].join(' ')}>
+      <div className="app-masthead">
         <div className="container">
           <div className="row">
             <div className="col-8">
-              <h1 className={[Styles['app-masthead--title']].join(' ')}>
-                {props.title}
-              </h1>
+              <h1 className="app-masthead--title">{props.title}</h1>
             </div>
           </div>
         </div>

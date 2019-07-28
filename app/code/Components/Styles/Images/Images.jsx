@@ -8,7 +8,6 @@ import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import DesktopSource from '../../../../assets/images/empty_cafe_800w.jpg';
 import MobileSource from '../../../../assets/images/empty_cafe_400w.jpg';
-import Styles from './Images.scss';
 import Snippet from '../../../Common/Snippet';
 
 /* Type Checking for PropTypes */
@@ -59,13 +58,11 @@ const Images = ({
         </code>
       </p>
       <div className="code-sample" ref={snippet}>
-        <picture className={Styles['picture']}>
+        <picture className="picture">
           <source media="(max-width: 790px)" srcSet={mobileSource} />
           <source media="(min-width: 800px)" srcSet={desktopSource} />
           <img src={desktopSource} alt={altText} title={altText} />
-          <span className={`figcaption ${Styles['figcaption']}`}>
-            {figcaption}
-          </span>
+          <span className="figcaption">{figcaption}</span>
         </picture>
       </div>
 

@@ -7,7 +7,6 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 import data from './Colour-data.yaml';
-import Styles from './Colour.scss';
 import Toaster from '../../../Common/Toaster';
 
 /* Type Checking for PropTypes */
@@ -86,10 +85,10 @@ const Colour = ({ title }) => {
           const arr = dataObj[key];
           return Object.keys(arr).map((title, index) => {
             return [
-              <div key={index} className={Styles['colour-list-title']}>
-                <h4 className={Styles['colour-list-title__text']}>{title}</h4>
+              <div key={index} className="colour-list-title">
+                <h4 className="colour-list-title__text">{title}</h4>
               </div>,
-              <div key={index + 1} className={Styles['colour-list']}>
+              <div key={index + 1} className="colour-list">
                 {Object.keys(arr).map(arrayKey => {
                   const Items = arr[arrayKey];
                   return Items.map((item, index) => {
@@ -97,15 +96,13 @@ const Colour = ({ title }) => {
                       return (
                         <div
                           key={index}
-                          className={[Styles['colour-list__item']].join(' ')}
+                          className="colour-list__item"
                           style={{ backgroundColor: `#${item[itemKey]}` }}
                           onClick={() => {
                             copyToClipBoard(item[itemKey]);
                           }}
                         >
-                          <div
-                            className={[Styles['colour-list__label']].join(' ')}
-                          >
+                          <div className="colour-list__label">
                             <span>
                               {itemKey} - #{item[itemKey]}
                             </span>
