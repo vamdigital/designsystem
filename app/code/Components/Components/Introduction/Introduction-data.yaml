@@ -1,5 +1,5 @@
-# Data for   : Components Component
-# Created on : 23/3/2019 19:08:02
+# Data for   : Introduction Component
+# Created on : 11/8/2019 8:34:46 PM
 # Created by : Vaibhav Shringarpure
 
 # sample YAML Data
@@ -11,4 +11,3 @@
 #     - tennis
 #     - golf
 #   attributes: { Handed: Left , BirthPlace: Home } - This is object
-component: list:
