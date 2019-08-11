@@ -3,44 +3,48 @@
 // Created on : 20/7/2019 3:59:54 PM
 // Created by : Vaibhav Shringarpure
 // -----------------------------------------------------------------------------
+.component-section {
+  .colour-list-title {
+    padding: 1em;
+    padding-left: 0;
+    display: inline-block;
+  }
 
-.colour-list-title {
-  padding: 1em;
-  padding-left: 0;
-  display: inline-block;
-}
+  .colour-list-title__text {
+    margin: 0;
+    font-weight: 600;
+    border-bottom: 2px solid $hm-bright-purple;
+  }
 
-.colour-list-title__text {
-  margin: 0;
-  font-weight: 600;
-  border-bottom: 2px solid $hm-bright-purple;
-}
+  .colour-list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    margin: 0;
+    float: none;
+  }
 
-.colour-list {
-  display: flex;
-  width: 100%;
-  flex-wrap: wrap;
-}
+  .colour-list__item {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1.5em;
+    padding-left: 0;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    width: 240px;
+    height: 200px;
+    border: 1px solid $hm-grey-2;
+    position: relative;
+  }
 
-.colour-list__item {
-  display: flex;
-  flex-direction: column;
-  padding: 0 1.5em;
-  padding-left: 0;
-  margin-right: 1em;
-  margin-bottom: 1em;
-  width: 240px;
-  height: 200px;
-  border: 1px solid $hm-grey-2;
-  position: relative;
-}
-
-.colour-list__label {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  background: darken($hm-grey-3, 20%);
-  padding: 0.5em;
-  @include remsize(font-size, 14px);
+  .colour-list__label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: darken($hm-grey-3, 20%);
+    padding: 0.5em;
+    margin: 0;
+    @include remsize(font-size, 14px);
+  }
 }

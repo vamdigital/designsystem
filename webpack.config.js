@@ -5,7 +5,7 @@ const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 const HTMLWebpackPluginConfig = new HTMLWebpackPlugin({
   template: __dirname + '/index.html',
   filename: 'index.html',
-  inject: 'body',
+  inject: false,
   hash: true,
   stats: {
     children: false
@@ -51,11 +51,7 @@ module.exports = {
           },
 
           {
-            loader: 'sass-loader',
-            options: {
-              data: '@import "./app/scss/app.scss";',
-              sourceMap: true
-            }
+            loader: 'sass-loader'
           }
         ]
       }
