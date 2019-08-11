@@ -25,6 +25,15 @@ const Main = () => {
       setIsTop(false);
     }
   };
+
+  // Cleaning the Url and removing the #top from the url
+  const cleanUrl = () => {
+    const urlString = window.location.href;
+    setTimeout(() => {
+      const newUrlString = urlString.split('#')[0];
+      window.history.pushState('', '', newUrlString);
+    }, 200);
+  };
   return (
     <main>
       <Switch>
@@ -35,7 +44,11 @@ const Main = () => {
       </Switch>
 
       <div className="back-to-top">
-        <a href="#top" className={isTop ? '' : 'back-to-top-hidden'}>
+        <a
+          href="#top"
+          className={isTop ? '' : 'back-to-top-hidden'}
+          onClick={cleanUrl}
+        >
           Back to top
         </a>
       </div>
