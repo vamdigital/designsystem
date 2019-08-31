@@ -2,7 +2,7 @@
   "name": "@vam/card",
   "version": "0.0.1",
   "description": "Card Component",
-  "main": "/lib/index.j",
+  "main": "/lib/index.js",
   "author": "VAM Digital Limited",
   "license": "MIT",
   "private": true,
