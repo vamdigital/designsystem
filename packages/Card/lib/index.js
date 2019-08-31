@@ -11,8 +11,12 @@ function _interopRequireDefault(obj) {
   return obj && obj.__esModule ? obj : { default: obj };
 }
 
-const Card = () => _react.default.createElement('div', null, 'Card');
+const Input = () =>
+  _react.default.createElement('input', {
+    type: 'text',
+    placeholder: '@vam/text'
+  });
 
-var _default = Card;
+var _default = Input;
 exports.default = _default;
 //# sourceMappingURL=index.js.map
