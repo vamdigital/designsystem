@@ -1,0 +1,11 @@
+{
+  "name": "@vam/card",
+  "version": "0.0.0",
+  "description": "Card Component",
+  "main": "/lib/index.js",
+  "author": "VAM",
+  "license": "MIT",
+  "peerDependencies": {
+    "react": "^16.9.0"
+  }
+}

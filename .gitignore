@@ -1,3 +1,4 @@
 /node_modules/
 /build/
 .eslintcache
+/packages/**/node_modules/

@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/index.jsx"],"names":["Card"],"mappings":";;;;;;;AAAA;;;;AAEA,MAAMA,IAAI,GAAG,MAAM;AACjB,SACE,gEADF;AAGD,CAJD;;eAMeA,I","sourcesContent":["import React from 'react';\n\nconst Card = () => {\n  return (\n    <div>I am card component</div>\n  )\n}\n\nexport default Card;"],"file":"index.js"}
