@@ -3,13 +3,22 @@
   "version": "1.0.0",
   "description": "A Starting point for React Application",
   "main": "main.js",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "scripts": {
     "build": "webpack --mode production",
     "dev": "webpack-dev-server --host 0.0.0.0 --port 3000 --open --mode development",
     "create": "node -e 'require(\"./main\").createComponent()'",
     "empty": "node -e 'require(\"./main\").emptyDirectory()'",
     "watcher": "node -e 'require(\"./main\").watcher()'",
-    "watch": "npm run watcher"
+    "watch": "npm run watcher",
+    "bootstrap": "lerna bootstrap --use-workspaces",
+    "lerna-build": "BABEL_ENV=build babel --root-mode upward src --out-dir lib --source-maps --extensions .js,.jsx --delete-dir-on-start --config-file ./babel.config.js --no-comments",
+    "prerelease": "yarn lerna-build",
+    "release": "lerna publish",
+    "commit": "git-cz"
   },
   "lint-staged": {
     "**/*.{js,jsx}": [
@@ -23,17 +32,27 @@
       "pre-commit": "lint-staged"
     }
   },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-lerna-changelog"
+    }
+  },
   "keywords": [],
   "author": "Vaibhav Shringarpure",
   "license": "ISC",
   "devDependencies": {
-    "@babel/core": "7.3.3",
-    "@babel/preset-react": "7.0.0",
+    "@babel/cli": "^7.5.5",
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
     "autoprefixer": "9.4.8",
+    "babel-core": "7.0.0-bridge.0",
     "babel-eslint": "10.0.1",
-    "babel-loader": "8.0.5",
+    "babel-loader": "^8.0.6",
     "babel-plugin-prismjs": "^1.0.2",
+    "commitizen": "^4.0.3",
     "css-loader": "2.1.0",
+    "cz-lerna-changelog": "^2.0.0",
     "eslint": "5.14.1",
     "eslint-config-airbnb": "17.1.0",
     "eslint-config-prettier": "4.0.0",
@@ -52,6 +71,7 @@
     "husky": "1.3.1",
     "js-yaml": "^3.13.1",
     "js-yaml-loader": "1.0.1",
+    "lerna": "^3.16.4",
     "lint-staged": "8.1.4",
     "mini-css-extract-plugin": "0.5.0",
     "node-sass": "4.11.0",
