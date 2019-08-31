@@ -7,5 +7,6 @@
   "license": "MIT",
   "peerDependencies": {
     "react": "^16.9.0"
-  }
+  },
+  "gitHead": "274acc0a08924779445b1fd05583cdf9ba719703"
 }

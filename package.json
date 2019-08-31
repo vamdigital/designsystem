@@ -22,7 +22,8 @@
     "test": "jest",
     "prerelease": "yarn build",
     "publish": "lerna publish from-package",
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "bootstrap": "lerna bootstrap"
   },
   "config": {
     "commitizen": {
