@@ -1,1 +1,1 @@
-{"version":3,"sources":["../../Card/src/index.jsx"],"names":["Card"],"mappings":";;;;;;;AAAA;;;;AAEA,MAAMA,IAAI,GAAG,MAAM,iDAAnB;;eAEeA,I","sourcesContent":["import React from 'react';\n\nconst Card = () => <div>Card</div>;\n\nexport default Card;\n"],"file":"index.js"}
+{"version":3,"sources":["../src/index.jsx"],"names":["Card"],"mappings":";;;;;;;AAAA;;;;AAEA,MAAMA,IAAI,GAAG,MAAM,iDAAnB;;eAEeA,I","sourcesContent":["import React from 'react';\n\nconst Card = () => <div>Card</div>;\n\nexport default Card;\n"],"file":"index.js"}
