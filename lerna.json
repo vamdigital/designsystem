@@ -3,13 +3,8 @@
   "npmClient": "yarn",
   "useWorkspaces": true,
   "version": "independent",
-  "command": {
-    "publish": {
-      "conventionalCommits": true,
-      "registry": "http://localhost:4873",
-      "access": "private",
-      "npmClient": "yarn",
-      "allowBranch": ["master", "feature/*"]
-    }
-  }
+  "conventionalCommits": true,
+  "registry": "http://localhost:4873",
+  "access": "private",
+  "allowBranch": ["master", "feature/*"]
 }
