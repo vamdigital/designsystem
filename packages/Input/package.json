@@ -1,0 +1,12 @@
+{
+  "name": "@vam/input",
+  "version": "0.0.0",
+  "description": "Input Component",
+  "main": "/lib/index.js",
+  "author": "VAM Digital Limited",
+  "license": "MIT",
+  "private": true,
+  "peerDependencies": {
+    "react": "^16.9.0"
+  }
+}
