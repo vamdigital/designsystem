@@ -15,7 +15,7 @@
     "watcher": "node -e 'require(\"./main\").watcher()'",
     "watch": "npm run watcher",
     "bootstrap": "lerna bootstrap --use-workspaces",
-    "lerna-build": "BABEL_ENV=build babel --root-mode upward src --out-dir lib --source-maps --extensions .js,.jsx --delete-dir-on-start --config-file ./babel.config.js --no-comments",
+    "lerna-build": "BABEL_ENV=build babel --root-mode upward packages/**/src --out-dir packages/**/lib --source-maps --extensions .js,.jsx --delete-dir-on-start --config-file ./babel.config.js --no-comments",
     "prerelease": "yarn lerna-build",
     "release": "lerna publish",
     "commit": "git-cz"
